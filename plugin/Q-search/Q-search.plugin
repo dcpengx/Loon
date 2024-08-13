@@ -1,7 +1,7 @@
 #!name= 超级搜索
 #!desc=Safari 内输入格式命令快速指定搜索实现 搜索、翻译、社区、购物、视频、苹果商店切区 等功能，使用方法：浏览器打开插件地址查看
 #!author= 秦城二院彭医生(收集)
-#!homepage= 插件首页，可在插件页面进行跳转
+#!homepage= https://github.com/dcpengx/Loon/tree/main/plugin/Q-search
 #!icon= https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/Safari.png
 #!system = iOS,iPadOS
 #!system_version = 15
