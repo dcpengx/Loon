@@ -25,3 +25,10 @@
 - tw  (切换至台湾区)
 # >>>>>>>>>>>>>>>>>>>>>>>社区
  
+```python
+# 这是一个Python代码块，可以一键复制
+def hello_world():
+    print("Hello, World!")
+ 
+if __name__ == "__main__":
+    hello_world()
