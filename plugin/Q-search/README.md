@@ -17,6 +17,14 @@
 - trc xxx (Google 译至中)  
 - tre xxx (Google 译至英)  
 - trj xxx (Google 译至日)
+## 视频
+- yt  xxx (YouTube)
+- bli xxx (哔哩哔哩)
+- gd  xxx (Google 搜索 Google Drive 资源)
+- tgd xxx (t.me/gdurl 搜索 Google Drive 资源)
+- ph  xxx (PornHub)
+- af  xxx (Acfun)
+- ys  xxx (茶杯狐cupfox)
 ## 苹果商店切换
 ##### 源链接爬虫于>>https://www.liangjianghu.com/searchads-appstore-switch
 ##### Created by ddgksf2013，使用方法：输入区号，搜索即可
@@ -47,12 +55,5 @@
 - zdm xxx (什么值得买)
 - jd  xxx (京东)
 - tb  xxx (淘宝)
-## 视频
-- yt  xxx (YouTube)
-- bli xxx (哔哩哔哩)
-- gd  xxx (Google 搜索 Google Drive 资源)
-- tgd xxx (t.me/gdurl 搜索 Google Drive 资源)
-- ph  xxx (PornHub)
-- af  xxx (Acfun)
-- ys  xxx (茶杯狐cupfox)
+
 
