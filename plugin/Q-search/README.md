@@ -7,7 +7,7 @@
 - wz  xxx (无追搜索)    
 - yh  xxx (油猴搜索)  
 - gi  xxx (Google 图片)  
-- bi  xxx (必应)  
+- by  xxx (必应)  
 - ios  xxx (苹果应用搜索)  
 - xxx （无指令默认为 Google）  
 ## 翻译  
@@ -22,7 +22,7 @@
 - tgd xxx (t.me/gdurl 搜索 Google Drive 资源)
 - ph  xxx (PornHub)
 - af  xxx (Acfun)
-- ys  xxx (茶杯狐cupfox)
+- ys  xxx (搜片)
 ## 苹果商店切换
 ##### 源链接爬虫于>>https://www.liangjianghu.com/searchads-appstore-switch
 ##### Created by ddgksf2013，使用方法：输入区号，搜索即可
