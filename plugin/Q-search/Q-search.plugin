@@ -130,9 +130,9 @@
 ^https:\/\/duckduckgo.com\/\?q=af\+([^&]+).+ 302 https://www.acfun.cn/search?keyword=$1
 ^https:\/\/duckduckgo.com\/\?q=([^+]+)\+af.+ 302 https://www.acfun.cn/search?keyword=$1
 
-# ys  xxx (茶杯狐cupfox)
-^https:\/\/duckduckgo.com\/\?q=ys\+([^&]+).+ 302 https://cupfox.app/search?key=$1
-^https:\/\/duckduckgo.com\/\?q=([^+]+)\+ys.+ 302 https://cupfox.app/search?key=$1
+# ys  xxx (搜片)
+^https:\/\/duckduckgo.com\/\?q=ys\+([^&]+).+ 302 https://soupian.icu/search?key=$1
+^https:\/\/duckduckgo.com\/\?q=([^+]+)\+ys.+ 302 https://soupian.icu/search?key=$1
 
 #>>>>>>>>>>>>>>>>>>>>>>>苹果商店切换
 #源链接爬虫于>>https://www.liangjianghu.com/searchads-appstore-switch
@@ -151,7 +151,7 @@
 ^https:\/\/duckduckgo.com\/\?q=kr&.+ 302 https://itunes.apple.com/WebObjects/MZStore.woa/wa/resetAndRedirect?dsf=143466&mt=8&url=/WebObjects/MZStore.woa/wa/viewSoftware?mt=8&id=1108187390&cc=kr&urlDesc=
 # tr  (切换至土耳其区)
 ^https:\/\/duckduckgo.com\/\?q=tr&.+ 302 https://itunes.apple.com/WebObjects/MZStore.woa/wa/resetAndRedirect?dsf=143480&mt=8&url=/WebObjects/MZStore.woa/wa/viewSoftware?mt=8&id=1108187390&cc=tr&urlDesc=
-# tr  (切换至新加坡区)
+# sg  (切换至新加坡区)
 ^https:\/\/duckduckgo.com\/\?q=sg&.+ 302 https://itunes.apple.com/WebObjects/MZStore.woa/wa/resetAndRedirect?dsf=143464&mt=8&url=/WebObjects/MZStore.woa/wa/viewSoftware?mt=8&id=1108187390&cc=tr&urlDesc=
 
 
@@ -165,7 +165,7 @@
 ^https:\/\/duckduckgo.com\/\?q=wk\+([^&]+).+ 302 https://zh.wikipedia.org/wiki/$1
 ^https:\/\/duckduckgo.com\/\?q=([^+]+)\+wk.+ 302 https://zh.wikipedia.org/wiki/$1
 
-# wk  xxx (无追搜索)
+# wz  xxx (无追搜索)
 ^https:\/\/duckduckgo.com\/\?q=wz\+([^&]+).+ 302 https://www.wuzhuiso.com/s?q=$1
 ^https:\/\/duckduckgo.com\/\?q=([^+]+)\+wz.+ 302 https://www.wuzhuiso.com/s?q=$1
 
@@ -177,9 +177,9 @@
 ^https:\/\/duckduckgo.com\/\?q=gi\+([^&]+).+ 302 https://www.google.com/search?&tbm=isch&q=$1
 ^https:\/\/duckduckgo.com\/\?q=([^+]+)\+gi.+ 302 https://www.google.com/search?&tbm=isch&q=$1
 
-# bi  xxx (必应)
-^https:\/\/duckduckgo.com\/\?q=bi\+([^&]+).+ 302 https://cn.bing.com/search?q=$1
-^https:\/\/duckduckgo.com\/\?q=([^+]+)\+bi.+ 302 https://cn.bing.com/search?q=$1
+# by  xxx (必应)
+^https:\/\/duckduckgo.com\/\?q=by\+([^&]+).+ 302 https://cn.bing.com/search?q=$1
+^https:\/\/duckduckgo.com\/\?q=([^+]+)\+by.+ 302 https://cn.bing.com/search?q=$1
 
 # ios  xxx (苹果应用搜索)
 ^https:\/\/duckduckgo.com\/\?q=ios\+([^&]+).+ 302 https://www.qimai.cn/search/index/search/$1
