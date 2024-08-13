@@ -4,8 +4,7 @@
 ## 搜索  
 - bd  xxx (百度搜索)  
 - wk  xxx (维基搜索)  
-- wz  xxx (无追搜索)  
-- wk  xxx (无追搜索)  
+- wz  xxx (无追搜索)    
 - yh  xxx (油猴搜索)  
 - gi  xxx (Google 图片)  
 - bi  xxx (必应)  
