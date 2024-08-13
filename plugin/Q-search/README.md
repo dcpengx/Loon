@@ -11,7 +11,7 @@
 - gi  xxx (Google 图片)  
 - bi  xxx (必应)  
 - ios  xxx (苹果应用搜索)  
--     xxx （无指令默认为 Google）  
+- xxx （无指令默认为 Google）  
 # >>>>>>>>>>>>>>>>>>>>>>>翻译  
 - yd  xxx (有道词典)  
 - trc xxx (Google 译至中)  
@@ -23,12 +23,11 @@
 - cn  (切换至中国区)
 - hk  (切换至香港区)
 - tw  (切换至台湾区)
+- us  (切换至美国区)
+- jp  (切换至日本区)
+- kr  (切换至韩国区)
+- tr  (切换至土耳其区)
+- tr  (切换至新加坡区)
 # >>>>>>>>>>>>>>>>>>>>>>>社区
  
-```python
-# 这是一个Python代码块，可以一键复制
-def hello_world():
-    print("Hello, World!")
- 
-if __name__ == "__main__":
-    hello_world()
+
