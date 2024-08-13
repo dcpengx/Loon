@@ -11,7 +11,7 @@
 - gi  xxx (Google 图片)  
 - bi  xxx (必应)  
 - ios  xxx (苹果应用搜索)  
-- xxx （无指令默认为 Google）  
+-   xxx （无指令默认为 Google）  
 # >>>>>>>>>>>>>>>>>>>>>>>翻译  
 - yd  xxx (有道词典)  
 - trc xxx (Google 译至中)  
