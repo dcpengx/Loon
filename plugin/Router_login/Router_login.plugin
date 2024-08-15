@@ -3,7 +3,7 @@
 #!author= 秦城二院彭医生
 #!homepage= https://github.com/dcpengx/Loon/new/main/plugin
 #!icon= https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/SSID.png
-#!system = iPadOS
+#!system = iOS,iPadOS
 #!system_version = 
 #!tag = 功能增强
 #!date= 2024-8-15
