@@ -1,0 +1,22 @@
+#!name= 路由登录
+#!desc=解决常用路由器可能的无法用域名登陆路由器管理页问题：tplogin.cn（普联）、‌falogin.cn（迅捷）、‌tendawifi.com（腾达）、‌melogin.cn（水星）、‌ruiyi.cn（锐捷）、‌www.miwifi.com（小米）、router.asus.com（华硕）、routerlogin.net（网件）、router.honor.cn（荣耀）、ihome.360.cn（360）、phicomm.me（斐讯）
+#!author= 秦城二院彭医生
+#!homepage= https://github.com/dcpengx/Loon/new/main/plugin
+#!icon= https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/SSID.png
+#!system = iOS,iPadOS
+#!system_version = 
+#!tag = 功能增强
+#!date= 2024-8-15
+
+[Host]
+tplogin.cn = server:system
+‌falogin.cn = server:system
+‌tendawifi.com = server:system
+‌melogin.cn = server:system
+ruiyi.cn = server:system
+www.miwifi.com = server:system
+router.asus.com = server:system
+routerlogin.net = server:system
+router.honor.cn = server:system
+ihome.360.cn = server:system
+phicomm.me = server:system
