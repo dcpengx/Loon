@@ -1,0 +1,16 @@
+#!name= tg外链直跳sg
+#!desc= telegram外链直接跳转三方客户端swiftgram
+#!openurlUrl=
+#!author= 秦城二院彭医生[https://github.com/dcpengx/Loon/]
+#!homepage= 插件首页，可在插件页面进行跳转
+#!icon= https://raw.githubusercontent.com/Orz-3/mini/master/Color/Telegram.png
+#!system = 
+#!system_version = 
+#!loon_version =
+#!tag = 功能增强,telegram
+
+[rewrite]
+(https:\/\/)?t\.me\/(.+) 302 sg://resolve?domain=$2
+
+[mitm]
+hostname = t.me
