@@ -3,7 +3,7 @@ let scheme = $argument.jump;
 
 // 检查传入的 jump 参数是否存在
 if (!scheme) {
-    $done({});  // 如果没有传入 arg1 参数，则不进行任何操作
+    $done({});  // 如果没有传入 jump 参数，则不进行任何操作
 }
 
 // 获取当前请求的 URL
