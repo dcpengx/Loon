@@ -1,0 +1,28 @@
+#!name=tg跳转
+#!desc= telegram外链直接跳转第三方客户端打开\n sg：swiftgram \n turrit:turrit
+#!author= 秦城二院彭医生[https://github.com/dcpengx/Loon/]
+#!icon= https://raw.githubusercontent.com/Orz-3/mini/master/Color/Telegram.png
+#!system = ios,ipados
+#!system_version = 16
+#!loon_version = 3.2.1(741)
+#!tag = 功能增强
+
+[argument]
+jump = select,"sg","turrit",tag=指定跳转客户端,desc=选择跳转到哪个第三方tg
+[Script]
+http-response (https:\/\/)?t\.me\/(.+) script-path=tg-redirect.js,tag = telegram-redirect,requires-body = false,timeout = 10,binary-body-mode = false,argument = [{jump}],enable=true
+
+[MITM]
+hostname = t.me
+#!system = ios,ipados
+#!system_version = 16
+#!loon_version = 3.2.1(741)
+#!tag = 功能增强
+
+[argument]
+jump = select,"sg","turrit",tag=指定跳转客户端,desc=选择跳转到哪个第三方tg
+[Script]
+http-response (https:\/\/)?t\.me\/(.+) script-path=tg-redirect.js,tag = telegram-redirect,requires-body = false,timeout = 10,binary-body-mode = false,argument = [{jump}],enable=true
+
+[MITM]
+hostname = t.me
