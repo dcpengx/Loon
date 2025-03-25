@@ -1,5 +1,5 @@
-#!name=tg跳转
-#!desc= telegram外链直接跳转第三方客户端打开\n sg：swiftgram \n turrit:turrit
+#!name=telegram外链跳转可选版
+#!desc= telegram外链直接跳转第三方客户端打开\nsg：swiftgram \nturrit:turrit
 #!author= 秦城二院彭医生[https://github.com/dcpengx/Loon/]
 #!icon= https://raw.githubusercontent.com/Orz-3/mini/master/Color/Telegram.png
 #!system = ios,ipados
