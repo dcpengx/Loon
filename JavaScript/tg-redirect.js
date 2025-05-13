@@ -17,12 +17,13 @@ if (match && scheme) {
     let newUrl = `${scheme}://resolve?domain=${match[1]}`;
 
     // 修改响应的 Location header
-    $done({
+    $done({response:{
         status: 302,  // 设置 HTTP 状态码为 302
         headers: {
             'Location': newUrl  // 设置新的 Location 重定向地址
         }
-    });
+    }
+          });
 } else {
     // 如果不匹配要求的 URL，返回原响应内容
     $done({});
