@@ -2,8 +2,9 @@
  * 节点解锁查询
  * 感谢并修改自 https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/streaming-ui-check.js
  * 脚本功能：检查节点是否支持Dazn/Discovery/Param/Disney/Netflix/ChatGPT/YouTube解锁服务
- * 原作者：XIAO_KOP  keywos
- * 2025.6.7  修复ChatGPT检测（禁用308重定向） by dcpengx
+ * 原作者：XIAO_KOP
+ * 2025.6.7  修复ChatGPT检测（禁用308重定向）
+ * 2025.12.22 启用Google送中检测
  */
 const NF_BASE_URL = "https://www.netflix.com/title/81280792";
 const DISNEY_BASE_URL = 'https://www.disneyplus.com';
@@ -18,7 +19,7 @@ const Discovery_BASE_URL = "https://us1-prod-direct.discoveryplus.com/users/me"
 const GPT_BASE_URL = 'https://chat.openai.com/'
 const GPT_RegionL_URL = 'https://chat.openai.com/cdn-cgi/trace'
 
-const Google_BASE_URL = 'https://www.google.com/maps/timeline'
+const Google_BASE_URL = 'https://www.google.com/'
 
 var inputParams = $environment.params;
 var nodeName = inputParams.node;
@@ -33,19 +34,22 @@ let result = {
     "Disney": "<b>Disneyᐩ: </b>检测失败，请重试 ❗️",
     "Paramount" : "<b>Paramountᐩ: </b>检测失败，请重试 ❗️",
     "Discovery" : "<b>Discoveryᐩ: </b>检测失败，请重试 ❗️",
+    "ChatGPT": "<b>ChatGPT: </b>检测失败，请重试 ❗️",
+    "Google2CN": "<b>Google 送中: </b>检测失败，请重试 ❗️"  // 新增
 }
 
 let arrow = " ➟ "
 
-Promise.all([ytbTest(),disneyLocation(),nfTest(),daznTest(),parmTest(),discoveryTest(),gptTest()]).then(value => {
-    let content = "------------------------------------</br>"+([result["Dazn"],result["Discovery"],result["Paramount"],result["Disney"],result["Netflix"],result["ChatGPT"],result["YouTube"]]).join("</br></br>")
+Promise.all([ytbTest(),disneyLocation(),nfTest(),daznTest(),parmTest(),discoveryTest(),gptTest(),googleToCN()  // 新增这一行
+]).then(value => {
+    let content = "------------------------------------</br>"+([result["Dazn"],result["Discovery"],result["Paramount"],result["Disney"],result["Netflix"],result["ChatGPT"],result["YouTube"],result["Google2CN"]]).join("</br></br>")
     content = content + "</br>------------------------------------</br>"+"<font color=#CD5C5C>"+"<b>节点</b> ➟ " + nodeName+ "</font>"
     content =`<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">` + content + `</p>`
     console.log(content);
     $done({"title":result["title"],"htmlMessage":content})
 }).catch (values => {
     console.log("reject:" + values);
-    let content = "------------------------------------</br>"+([result["Dazn"],result["Discovery"],result["Paramount"],result["Disney"],result["Netflix"],result["ChatGPT"],result["YouTube"]]).join("</br></br>")
+    let content = "------------------------------------</br>"+([result["Dazn"],result["Discovery"],result["Paramount"],result["Disney"],result["Netflix"],result["ChatGPT"],result["YouTube"],result["Google2CN"]]).join("</br></br>")
     content = content + "</br>------------------------------------</br>"+"<font color=#CD5C5C>"+"<b>节点</b> ➟ " + nodeName+ "</font>"
     content =`<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">` + content + `</p>`
     $done({"title":result["title"],"htmlMessage":content})
@@ -56,7 +60,7 @@ function disneyLocation() {
         let params = {
             url: DISNEY_LOCATION_BASE_URL,
             node: nodeName,
-            timeout: 5000, //ms
+            timeout: 10000, //ms
             headers: {
                 'Accept-Language': 'en',
                 "Authorization": 'ZGlzbmV5JmJyb3dzZXImMS4wLjA.Cu56AgSfBTDag5NiRA81oLHkDZfu5L3CKadnefEAY84',
@@ -123,7 +127,7 @@ function disneyHomePage() {
         let params = {
             url: DISNEY_BASE_URL,
             node: nodeName,
-            timeout: 5000, //ms
+            timeout: 7000, //ms
             headers: {
                 'Accept-Language': 'en',
                 'User-Agent': UA,
@@ -213,7 +217,7 @@ function daznTest() {
         let params = {
             url: Dazn_BASE_URL,
             node: nodeName,
-            timeout: 5000, //ms
+            timeout: 10000, //ms
             headers: {
                 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36',
                 "Content-Type": "application/json"
@@ -245,8 +249,8 @@ function daznTest() {
                 resolve(response.status);
             }
         })
-    }) 
-    
+    }) 
+    
 }
 
 function parmTest() {
@@ -254,7 +258,7 @@ function parmTest() {
         let params = {
             url: Param_BASE_URL,
             node: nodeName,
-            timeout: 5000, //ms
+            timeout: 10000, //ms
             headers: {
                 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36',
             }
@@ -287,7 +291,7 @@ function discoveryTest() {
         let params = {
             url: Discovery_token_BASE_URL,
             node: nodeName,
-            timeout: 5000, //ms
+            timeout: 10000, //ms
             headers: {
                 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36',
             }
@@ -308,7 +312,7 @@ function discoveryTest() {
                 let p = {
                     url: Discovery_BASE_URL,
                     node: nodeName,
-                    timeout: 5000,
+                    timeout: 10000,
                     headers: {
                         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36',
                         "Cookie": cookievalid,
@@ -352,12 +356,12 @@ function nfTest() {
         let params = {
             url: NF_BASE_URL,
             node: nodeName,
-            timeout: 6000, //ms
+            timeout: 10000, //ms
             headers: {
                 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15',
             }
         }
-        
+        
         $httpClient.get(params, (errormsg,response,data) => {
             console.log("----------NetFlix--------------");
             if (errormsg) {
@@ -422,7 +426,7 @@ function gptTest() {
                 // resolve(errormsg);
                 resolve("不支持 ChatGPT")
                 return;
-            } 
+            } 
             let resp = JSON.stringify(response)
             console.log("ChatGPT Main Test")
             let jdg = resp.indexOf("text/plain")
@@ -470,14 +474,12 @@ function googleToCN() {
         let params = {
             url: Google_BASE_URL,
             node: nodeName,
-            timeout: 3000, //ms
+            timeout: 10000, //ms
             headers:{
-                'Accept-Encoding' : `gzip, deflate, br`,
-                'Connection' : `keep-alive`,
-                'Accept' : `text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8`,
-                'Host' : `www.google.com`,
-                'User-Agent' : `Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.1 Mobile/15E148 Safari/604.1`,
-                'Accept-Language' : `zh-CN,zh-Hans;q=0.9`
+                'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1',
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+                'Accept-Language': 'zh-CN,zh-Hans;q=0.9',  // 必须！
+                'Accept-Encoding': 'gzip, deflate, br'
             }
         }
 
@@ -485,17 +487,37 @@ function googleToCN() {
             console.log("----------Google2CN--------------");
             if (errormsg) {
                 console.log("Google2CN request failed:" + errormsg);
-                result["Google2CN"] = "<b>2CN: </b>检测失败 ❗️";
+                result["Google2CN"] = "<b>Google: </b>送中检测失败 ❗️";
                 resolve(errormsg);
                 return;
             }
-            if (response.status == 400) {
-                result["Google2CN"] = "<b>2CN: </b>已被送中"
+            const location = response.headers['Location'] || response.headers['location'];
+            const finalURL = response.headers['X-Final-URL'] || response.headers['x-final-url'] || params.url;
+
+            // 如果被重定向到 google.cn，或返回 400/403 且内容含 google.cn
+            if (
+                response.status === 400 ||
+                response.status === 403 ||
+                (location && location.includes('google.cn')) ||
+                finalURL.includes('google.cn') ||
+                data.includes('www.google.cn')
+            ) {
+               console.log("节点已被送中");
+                result["Google2CN"] = "<b>Google 送中: </b>送中" + arrow + "已被送中 ⚠️"
+                 resolve("404 Not Found");
+            } else {
+                console.log("节点未被送中")
+                result["Google2CN"] = "<b>Google: </b>送中" + arrow + "未被送中 🎉"
+resolve(response.status);
+
+/*            if (response.status == 400) {
+                result["Google2CN"] = "<b>Google 送中: </b>送中" + arrow + "已被送中 ⚠️"
                 resolve("404 Not Found");
             } else {
-                result["Google2CN"] = "<b>2CN: </b>未被送中"
+                result["Google2CN"] = "<b>Google: </b>送中" + arrow + "未被送中 🎉"
                 resolve(response.status);
+*/
             }
         })
     })
-}
+                        }
