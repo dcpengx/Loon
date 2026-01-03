@@ -1,0 +1,20 @@
+#!name= ddgksf2Loon
+#!desc= 墨鱼索引页 点击索引卡片，自动跳转到Loon安装。\n注：仅支持脚本部分\n使用前请添加ScriptHub插件\n低调使用
+#!author= dcpengx
+#!homepage= https://github.com/dcpengx/Loon/tree/main/plugin
+#!openUrl=https://ddgksf2013.top/
+#!icon= 
+#!system = iOS,iPadOS,tvOS,macOS
+#!system_version = 15
+#!loon_version = 3.2.1(372)
+#!tag = 功能增强
+#!date= 2026-1-3
+
+[rewrite]
+# 修改UA
+https:\/\/ddgksf2013\.top\/scripts\/ header-replace User-Agent Surge\x20iOS/3611
+# 修改跳转
+^https?:\/\/ddgksf2013.top\/$ response-body-replace-regex Lock\s*=\s*\d Lock=2 (&target)=surge-module $1=loon-plugin surge:\/\/\/install-module\?url loon://import?plugin <\/i>\s*QuantumultX </i>\x20Loon
+
+[mitm]
+hostname = ddgksf2013.top
