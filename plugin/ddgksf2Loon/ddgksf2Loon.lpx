@@ -1,5 +1,5 @@
 #!name= ddgksf2Loon
-#!desc= 墨鱼索引页 点击索引卡片，自动跳转到Loon安装。点击插件列表的网址跳转到墨鱼索引页。感谢 @鱼安yuan 找到应用图标参数\n注：仅支持脚本部分\n使用前请添加ScriptHub插件\n请勿关闭本插件，否则脚本资源可能无法更新\n低调使用
+#!desc= 墨鱼索引页点击索引卡片，自动跳转到Loon安装。点击插件列表的网址跳转到墨鱼索引页。感谢 @鱼安yuan 找到应用图标参数\n注：仅支持脚本部分\n  使用前请添加ScriptHub插件\n  请勿关闭本插件，否则脚本资源可能无法更新\n  低调使用
 #!author= dcpengx
 #!homepage= https://github.com/dcpengx/Loon/tree/main/plugin
 #!openUrl=https://ddgksf2013.top/
