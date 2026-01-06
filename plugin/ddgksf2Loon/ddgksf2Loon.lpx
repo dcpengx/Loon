@@ -12,7 +12,7 @@
 
 [rewrite]
 # 修改UA
-https:\/\/ddgksf2013\.top\/scripts\/ header-replace User-Agent Surge\x20iOS/3611
+^https?:\/\/ddgksf2013\.top\/scripts\/ header-replace User-Agent Surge\x20iOS/3611
 # 修改跳转
 ^https?:\/\/ddgksf2013.top\/$ response-body-replace-regex Lock\s*=\s*\d Lock=2 (jqEnabled=true") $1+"&icon="+item.icon (&target)=surge-module $1=loon-plugin surge:\/\/\/install-module\?url loon://import?plugin <\/i>\s*QuantumultX </i>\x20Loon
 
