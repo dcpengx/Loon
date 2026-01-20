@@ -4,11 +4,11 @@
 #!openUrl=https://ddgksf2013.top/
 #!author= 秦城二院彭医生[https://github.com/dcpengx/Loon/]
 #!icon= 
-#!system = iOS,iPadOS,tvOS,macOS
+#!system = iOS,iPadOS,macOS
 #!system_version = 15
 #!loon_version = 3.2.1(372)
 #!tag = 功能增强
-#!date= 2026-1-3
+#!date= 2026-01-21 01:04:45
 
 [rewrite]
 # 修改UA
