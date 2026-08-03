@@ -5,7 +5,7 @@
 #!system = ios,ipados
 #!data=2026-8-3
 #!system_version = 15
-#!loon_version = 3.5.1978)
+#!loon_version = 3.5.1(978)
 #!tag = 功能增强
 
 [argument]
