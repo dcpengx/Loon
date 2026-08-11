@@ -8,6 +8,7 @@
 #!loon_version = 3.5.1(978)
 #!tag = 功能增强
 
+
 [argument]
 jump = select,"tg","sg","turrit","ime",tag=指定跳转客户端,desc=选择跳转到哪个第三方tg
 [Rewrite]
