@@ -186,7 +186,7 @@
 ^https:\/\/duckduckgo.com\/\?q=([^+]+)\+ios.+ 302 https://www.qimai.cn/search/index/search/$1
 
 #     xxx （无指令默认为 Google）
-^https:\/\/duckduckgo.com\/\?q=([^&]+).+ 302 https://www.google.com/search?q=$1
-
+# 默认 Google 搜索：排除 Q-search 指令
+^https:\/\/duckduckgo.com\/\?q=(?!(?:cn|hk|tw|us|jp|kr|tr|sg)&)(?!(?:yd|trc|tre|trj|tt|db|zh|wb|wx|up|sspai|ssp|tw|gh|so|se|wa|rd|zdm|jd|tb|yt|bli|gd|tgd|ph|af|ys|bd|wk|wz|yh|gi|by|ios)\+)(?![^&]+\+(?:yd|trc|tre|trj|tt|db|zh|wb|wx|up|sspai|ssp|tw|gh|so|se|wa|rd|zdm|jd|tb|yt|bli|gd|tgd|ph|af|ys|bd|wk|wz|yh|gi|by|ios)(?:&|$))([^&]+).+ 302 https://www.google.com/search?q=$1
 [Mitm]
 hostname = duckduckgo.com
