@@ -23,13 +23,13 @@ hostname = t.me,telegram.me,telegram.dog
 # https://t.me/<用户名>
 # ==============================
 
-request if ${url} ~= /^https?:\/\/(?:t\.me|telegram\.me|telegram\.dog)\/(?!(?:\+|c\/)|(?:addemoji|addlist|addstickers|addstyle|addtheme|auction|auth|bg|boost|call|confirmphone|contact|giftcode|invoice|joinchat|login|m|nft|proxy|setlanguage|share|socks|web|a|k|z)(?:[\/?#]|$))([^\/?#]+)$/i as public1 then redirect(302, "${scheme}://resolve?domain=${public1.1}")
+request if ${url} ~= /^https?:\/\/(?:t\.me|telegram\.me|telegram\.dog)\/(?!(?:\+|c\/)|(?:addemoji|addlist|addstickers|addstyle|addtheme|auction|auth|bg|boost|call|confirmphone|contact|giftcode|invoice|joinchat|login|m|nft|proxy|setlanguage|share|socks|web|a|k|z|www)(?:[\/?#]|$))([A-Za-z0-9_]{5,32})$/i as public1 then redirect(302, "${scheme}://resolve?domain=${public1.1}")
 
 
 # 公开用户名、群组、频道 + 查询参数
 # 特殊 Query 不在这里处理
 
-request if ${url} ~= /^https?:\/\/(?:t\.me|telegram\.me|telegram\.dog)\/(?!(?:\+|c\/)|(?:addemoji|addlist|addstickers|addstyle|addtheme|auction|auth|bg|boost|call|confirmphone|contact|giftcode|invoice|joinchat|login|m|nft|proxy|setlanguage|share|socks|web|a|k|z)(?:[\/?#]|$))([^\/?#]+)\?(?!(?:boost|direct|videochat|livestream|voicechat|album)(?:[=&?#]|$))(.+)$/i as public2 then redirect(302, "${scheme}://resolve?domain=${public2.1}&${public2.2}")
+request if ${url} ~= /^https?:\/\/(?:t\.me|telegram\.me|telegram\.dog)\/(?!(?:\+|c\/)|(?:addemoji|addlist|addstickers|addstyle|addtheme|auction|auth|bg|boost|call|confirmphone|contact|giftcode|invoice|joinchat|login|m|nft|proxy|setlanguage|share|socks|web|a|k|z|www)(?:[\/?#]|$))([A-Za-z0-9_]{5,32})\?(?!(?:boost|direct|videochat|livestream|voicechat|album)(?:[=&?#]|$))(.+)$/i as public2 then redirect(302, "${scheme}://resolve?domain=${public2.1}&${public2.2}")
 
 # ==============================
 # 手机号码
@@ -56,13 +56,13 @@ request if ${url} ~= /^https?:\/\/(?:t\.me|telegram\.me|telegram\.dog)\/joinchat
 # https://t.me/<用户名>/<消息ID>
 # ==============================
 
-request if ${url} ~= /^https?:\/\/(?:t\.me|telegram\.me|telegram\.dog)\/(?!(?:\+|c\/)|(?:addemoji|addlist|addstickers|addstyle|addtheme|auction|auth|bg|boost|call|confirmphone|contact|giftcode|invoice|joinchat|login|m|nft|proxy|setlanguage|share|socks|web|a|k|z)(?:[\/?#]|$))([^\/?#]+)\/([0-9]+)$/i as msg1 then redirect(302, "${scheme}://resolve?domain=${msg1.1}&post=${msg1.2}")
+request if ${url} ~= /^https?:\/\/(?:t\.me|telegram\.me|telegram\.dog)\/(?!(?:\+|c\/)|(?:addemoji|addlist|addstickers|addstyle|addtheme|auction|auth|bg|boost|call|confirmphone|contact|giftcode|invoice|joinchat|login|m|nft|proxy|setlanguage|share|socks|web|a|k|z|www)(?:[\/?#]|$))([A-Za-z0-9_]{5,32})\/([0-9]+)$/i as msg1 then redirect(302, "${scheme}://resolve?domain=${msg1.1}&post=${msg1.2}")
 
 
 # 公开消息 + 查询参数
 # single、thread、comment、t、task、option 等原样保留
 
-request if ${url} ~= /^https?:\/\/(?:t\.me|telegram\.me|telegram\.dog)\/(?!(?:\+|c\/)|(?:addemoji|addlist|addstickers|addstyle|addtheme|auction|auth|bg|boost|call|confirmphone|contact|giftcode|invoice|joinchat|login|m|nft|proxy|setlanguage|share|socks|web|a|k|z)(?:[\/?#]|$))([^\/?#]+)\/([0-9]+)\?(.+)$/i as msg2 then redirect(302, "${scheme}://resolve?domain=${msg2.1}&post=${msg2.2}&${msg2.3}")
+request if ${url} ~= /^https?:\/\/(?:t\.me|telegram\.me|telegram\.dog)\/(?!(?:\+|c\/)|(?:addemoji|addlist|addstickers|addstyle|addtheme|auction|auth|bg|boost|call|confirmphone|contact|giftcode|invoice|joinchat|login|m|nft|proxy|setlanguage|share|socks|web|a|k|z|www)(?:[\/?#]|$))([A-Za-z0-9_]{5,32})\/([0-9]+)\?(.+)$/i as msg2 then redirect(302, "${scheme}://resolve?domain=${msg2.1}&post=${msg2.2}&${msg2.3}")
 
 
 # ==============================
@@ -70,9 +70,9 @@ request if ${url} ~= /^https?:\/\/(?:t\.me|telegram\.me|telegram\.dog)\/(?!(?:\+
 # https://t.me/<用户名>/<主题ID>/<消息ID>
 # ==============================
 
-request if ${url} ~= /^https?:\/\/(?:t\.me|telegram\.me|telegram\.dog)\/(?!(?:\+|c\/)|(?:addemoji|addlist|addstickers|addstyle|addtheme|auction|auth|bg|boost|call|confirmphone|contact|giftcode|invoice|joinchat|login|m|nft|proxy|setlanguage|share|socks|web|a|k|z)(?:[\/?#]|$))([^\/?#]+)\/([0-9]+)\/([0-9]+)$/i as thread1 then redirect(302, "${scheme}://resolve?domain=${thread1.1}&post=${thread1.3}&thread=${thread1.2}")
+request if ${url} ~= /^https?:\/\/(?:t\.me|telegram\.me|telegram\.dog)\/(?!(?:\+|c\/)|(?:addemoji|addlist|addstickers|addstyle|addtheme|auction|auth|bg|boost|call|confirmphone|contact|giftcode|invoice|joinchat|login|m|nft|proxy|setlanguage|share|socks|web|a|k|z|www)(?:[\/?#]|$))([A-Za-z0-9_]{5,32})\/([0-9]+)\/([0-9]+)$/i as thread1 then redirect(302, "${scheme}://resolve?domain=${thread1.1}&thread=${thread1.2}&post=${thread1.3}")
 
-request if ${url} ~= /^https?:\/\/(?:t\.me|telegram\.me|telegram\.dog)\/(?!(?:\+|c\/)|(?:addemoji|addlist|addstickers|addstyle|addtheme|auction|auth|bg|boost|call|confirmphone|contact|giftcode|invoice|joinchat|login|m|nft|proxy|setlanguage|share|socks|web|a|k|z)(?:[\/?#]|$))([^\/?#]+)\/([0-9]+)\/([0-9]+)\?(.+)$/i as thread2 then redirect(302, "${scheme}://resolve?domain=${thread2.1}&post=${thread2.3}&thread=${thread2.2}&${thread2.4}")
+request if ${url} ~= /^https?:\/\/(?:t\.me|telegram\.me|telegram\.dog)\/(?!(?:\+|c\/)|(?:addemoji|addlist|addstickers|addstyle|addtheme|auction|auth|bg|boost|call|confirmphone|contact|giftcode|invoice|joinchat|login|m|nft|proxy|setlanguage|share|socks|web|a|k|z|www)(?:[\/?#]|$))([A-Za-z0-9_]{5,32})\/([0-9]+)\/([0-9]+)\?(.+)$/i as thread2 then redirect(302, "${scheme}://resolve?domain=${thread2.1}&thread=${thread2.2}&post=${thread2.3}&${thread2.4}")
 
 # ==============================
 # 私有频道消息
