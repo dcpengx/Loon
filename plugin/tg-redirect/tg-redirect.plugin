@@ -2,7 +2,7 @@
 #!desc= telegram外链直接跳转第三方客户端打开\ntg:Telegram/Nagram\nsg:Swiftgram\nTurrit:Turrit\nime:iMe \nng:Nicegram\nlingo:Lingogram
 #!author= 秦城二院彭医生[https://github.com/dcpengx/Loon/]
 #!icon= https://raw.githubusercontent.com/Orz-3/mini/master/Color/Telegram.png
-#!system = ios,ipados
+#!system = ios,ipados,macOS
 #!date=2026-9-3
 #!system_version = 15
 #!loon_version = 3.5.1(978)
