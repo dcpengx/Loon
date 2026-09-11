@@ -1,6 +1,5 @@
 #!name = GitHub Private Access
-#!desc = 访问私有仓库链接，可用于从私库下载资源。\n1.用户名：将正则表达式中的 username 改成你自己的GitHub用户名
-\n2.token：填入你申请的token
+#!desc = 访问私有仓库链接，可用于从私库下载资源。\n1.用户名：将正则表达式中的 username 改成你自己的GitHub用户名\n2.token：填入你申请的token
 #!author = dcpengx[https://github.com/dcpengx/Loon/tree/main]
 #!homePage = https://github.com/dcpengx/Loon/tree/main/plugin/GitHub%20Private%20Access
 #!date = 2026-09-12
