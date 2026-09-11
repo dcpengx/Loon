@@ -6,7 +6,7 @@
 - 1.用户名：将正则表达式中的username改成你自己的GitHub用户名
 - 2.token：填入你申请的token
 
-### token申请方法：
+##### token申请方法：
 - 登陆Github 
 - 点击头像下拉菜单 
 - 选择Settings 
