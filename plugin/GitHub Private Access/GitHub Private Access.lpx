@@ -14,7 +14,7 @@ username = input,"https:\/\/(?:raw|gist)\.githubusercontent\.com\/username\/",ta
 token = input,"",tag=token,desc=填写你申请的token
 
 [rewrite]
-request if ${url} ~= ${username} && ${request.header['user-agent']} ~= /^Loon/ then request.header.set("Authorization", "token ${token}")
+request if ${url} ~= ${username} && ${token} ~= /^\S+$/ && ${request.header['user-agent']} ~= /^Loon/ then request.header.set("Authorization", "token ${token}")
 
 [MITM]
 hostname = raw.githubusercontent.com, gist.githubusercontent.com
