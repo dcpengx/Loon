@@ -4,7 +4,7 @@
 #!homePage = https://github.com/dcpengx/Loon/tree/main/plugin/GitHub%20Private%20Access
 #!data = 2026-09-12
 #!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/GitHub.png
-#!system = ios,tvos,macos
+#!system = IOS,iPadOS,macOS
 #!system_version = 15.0
 #!loon_version = 3.5.1(980)
 #!tag =功能增强
