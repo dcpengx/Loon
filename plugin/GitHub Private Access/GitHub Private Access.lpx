@@ -2,7 +2,7 @@
 #!desc = 访问私有仓库链接，可用于从私库下载资源
 #!author = dcpengx[https://github.com/dcpengx/Loon/tree/main]
 #!homePage = https://github.com/dcpengx/Loon/tree/main/plugin/GitHub%20Private%20Access
-#!data = 2026-09-12
+#!date = 2026-09-12
 #!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/GitHub.png
 #!system = IOS,iPadOS,macOS
 #!system_version = 15.0
