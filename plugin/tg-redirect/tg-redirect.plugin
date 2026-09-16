@@ -1,5 +1,5 @@
 #!name=telegram外链跳转可选版
-#!desc= telegram外链直接跳转第三方客户端打开\ntg:Telegram/Nagram\nsg:Swiftgram\nTurrit:Turrit\nime:iMe \nng:Nicegram\nlingo:Lingogram
+#!desc= telegram外链直接跳转第三方客户端打开\ntg:Telegram/Nagram\nsg:Swiftgram\nTurrit:Turrit\nime:iMe \nng:Nicegram\nlingo:Lingogram\n注：若首次使用出现无法正常跳转，长按链接选择“新标签页打开”，之后即可正常使用插件跳转！
 #!author= 秦城二院彭医生[https://github.com/dcpengx/Loon/]
 #!icon= https://raw.githubusercontent.com/Orz-3/mini/master/Color/Telegram.png
 #!system = ios,ipados,macOS
