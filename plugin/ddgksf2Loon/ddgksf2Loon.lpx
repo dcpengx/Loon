@@ -1,18 +1,18 @@
 #!name= ddgksf2Loon
-#!desc= 墨鱼索引页点击索引卡片，自动跳转到Loon安装。点击插件列表的网址跳转到墨鱼索引页。感谢 @鱼安yuan 找到应用图标参数。注：\n1.仅支持重写部分\n2.使用前请添加ScriptHub插件，并开启MitM和复写开关\n3.请勿关闭本插件，否则脚本资源可能无法更新\n4.低调使用
+#!desc= 墨鱼索引页点击索引卡片，自动跳转到Loon安装。点击插件列表的网址跳转到墨鱼索引页。感谢 @鱼安yuan 找到应用图标参数。注：\n1.使用前请添加ScriptHub插件，并开启MitM和复写开关\n2.请勿关闭本插件，否则脚本资源可能无法更新
 #!homepage= https://github.com/dcpengx/Loon/tree/main/plugin
 #!openUrl=https://ddgksf2013.top/
 #!author= 秦城二院彭医生[https://github.com/dcpengx/Loon/]
-#!icon= 
+#!icon= https://avatars.githubusercontent.com/u/116851128?v=4
 #!system = iOS,iPadOS,macOS
 #!system_version = 15
-#!loon_version = 3.2.1(372)
+#!loon_version = 3.5.1(998)
 #!tag = 功能增强
-#!date= 2026-03-17
+#!date= 2026-09-27
 
 [rewrite]
 # 修改跳转
-^https?:\/\/ddgksf2013.top\/$ response-body-replace-regex Lock\s*=\s*\d Lock=4 (jqEnabled=true") $1+"&icon="+item.icon <\/i>\s*QuantumultX </i>\x20Loon
+response if ${url} ~= /^https?:\/\/ddgksf2013.top\/$/i then response.body.replace([/Lock\s*=\s*\d/, /(jqEnabled=true")/, /<\/i>\s*QuantumultX/], ["Lock=4", "$1+\"&icon=\"+item.icon", "</i> Loon"])
 
 [mitm]
 hostname = ddgksf2013.top
